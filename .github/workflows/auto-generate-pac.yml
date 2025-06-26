@@ -35,7 +35,7 @@ jobs:
 
       - name: Run gfw-pac.py script
         if: env.file-exists == 'false'
-        run: ./gfw-pac.py -f gfw.pac -p "PROXY 192.168.1.11:1080" --proxy-domains=proxy-domains.txt --direct-domains=direct-domains.txt --localtld-domains=local-tlds.txt --ip-file=cidrs-cn.txt
+        run: ./gfw-pac.py -f gfw.pac -p "SOCKS5 192.168.1.11:1080" --proxy-domains=proxy-domains.txt --direct-domains=direct-domains.txt --localtld-domains=local-tlds.txt --ip-file=cidrs-cn.txt
 
       - name: Commit and push changes
         if: env.file-exists == 'false'
